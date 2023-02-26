@@ -27,9 +27,8 @@ public class svlPelicula extends HttpServlet {
         if( id != null) {
         	if (id.equals("cartelera") || id.equals("estrenos"))  
         
-        		data = new dao.PeliculaDAO().getPeliculas(id.equals("cartelera")? 1 : 2,true);
-        	else data = new dao.PeliculaDAO().getPelicula(id, true);
-           /* Para el arreglo Object data = new dao.PeliculaDAO().getPeliculas(id.equals("cartelera")? 1 : 2);*/
+        		data = new dao.PeliculaDAO().getPeliculas(id.equals("cartelera")? 1 : 2,false);
+        	else data = new dao.PeliculaDAO().getPelicula(id, false);
             
             session.setAttribute("id",data==null ? null : id.equals("cartelera") || id.equals("estrenos")?"peliculas": "pelicula");
             session.setAttribute("data",data);

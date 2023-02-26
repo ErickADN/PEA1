@@ -33,11 +33,11 @@ public class svlCine extends HttpServlet {
             session.setAttribute("data", data);
             
         }else {
-        	data = daoCine.getVerCine(id,false);
+        	data = daoCine.getVerCine(id,true);
             session.setAttribute("id", data==null ? null : "cine");
             session.setAttribute("data", data);
-            session.setAttribute("mTarifas", daoCine.getCineTarifas(id,false));
-            session.setAttribute("mPeliculas", daoCine.getCinePeliculas(id,false));
+            session.setAttribute("mTarifas", daoCine.getCineTarifas(id,true));
+            session.setAttribute("mPeliculas", daoCine.getCinePeliculas(id,true));
     }
         response.sendRedirect("index.jsp");
     }

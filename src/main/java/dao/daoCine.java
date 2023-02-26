@@ -5,6 +5,8 @@ import java.util.List;
 
 import bean.Cine;
 import bean.Pelicula;
+import bean.cineTarifa;
+import bean.cinepeliculas;
 
 
 public class daoCine {
@@ -31,25 +33,25 @@ public class daoCine {
 
 	public Object getCineTarifas(Object id,boolean bLista) {
 		db.Sentencia(String.format("call sp_getCineTarifas(%s)",id));
-		String[][] cinestarifas = db.getRegistros();	
-		if(cinestarifas==null) return null;
-		if(!bLista) return cinestarifas;
+		String[][] cinetarifas = db.getRegistros();	
+		if(cinetarifas==null) return null;
+		if(!bLista) return cinetarifas;
 		
-		List<Cine> lstCinetarifas = new ArrayList<>();
-		for(String[] cinetarifa : cinestarifas)
-			lstCinetarifas.add(new Cine(cinetarifa));
+		List<cineTarifa> lstCinetarifas = new ArrayList<>();
+		for(String[] cinetarifa : cinetarifas)
+			lstCinetarifas.add(new cineTarifa(cinetarifa));
 		return lstCinetarifas;
 	}
 
 	public Object getCinePeliculas(Object id,boolean bLista) {
 		db.Sentencia(String.format("call sp_getCinePeliculas(%s)",id));
-		String[][] cinespeliculas = db.getRegistros();	
-		if(cinespeliculas==null) return null;
-		if(!bLista) return cinespeliculas;
+		String[][] cinepeliculas = db.getRegistros();	
+		if(cinepeliculas==null) return null;
+		if(!bLista) return cinepeliculas;
 		
-		List<Cine> lstCinepeliculas = new ArrayList<>();
-		for(String[] cinespelicula : cinespeliculas)
-			lstCinepeliculas.add(new Cine(cinespelicula));
+		List<cinepeliculas> lstCinepeliculas = new ArrayList<>();
+		for(String[] cinepelicula : cinepeliculas)
+			lstCinepeliculas.add(new cinepeliculas(cinepelicula));
 		return lstCinepeliculas;
 	}
 

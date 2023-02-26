@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-<% String [] pelicula =(String[]) session.getAttribute("data"); %>>
+<% String [] pelicula =(String[]) session.getAttribute("data"); %>
 <br/><h1>Cartelera</h1><br/>
 <div class="contenido-pelicula">
 	<div class="datos-pelicula">

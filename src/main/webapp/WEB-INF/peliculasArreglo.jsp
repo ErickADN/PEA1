@@ -11,7 +11,7 @@
         <p><%=pelicula[2] %></p>
         <br/>
         <div class="boton-pelicula"> 
-            <a href="svlPelicula?id<%=pelicula[0] %>>">
+            <a href="svlPelicula?id=<%=pelicula[0] %>>">
                 <img src="img/varios/btn-mas-info.jpg" width="120" height="30" alt="Ver info"/>
             </a>
         </div>

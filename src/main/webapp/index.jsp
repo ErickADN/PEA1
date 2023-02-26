@@ -22,13 +22,13 @@
 				<% Object id = session.getAttribute("id");
                     if(id==null) { %>
                     <% } else if(id.equals("peliculas")) { %>
-                        <%@include file="WEB-INF/peliculas.jsp" %>
+                        <%@include file="WEB-INF/peliculasArreglo.jsp" %>
                     <% } else if(id.equals("pelicula")) { %>
-                        <%@include file="WEB-INF/pelicula.jsp" %>
+                        <%@include file="WEB-INF/peliculaArreglo.jsp" %>
                     <% } else if(id.equals("cines")) { %>	
-                        <%@include file="WEB-INF/cines.jsp" %>
+                        <%@include file="WEB-INF/cinesArreglo.jsp" %>
                     <% } else if(id.equals("cine")) { %>
-                        <%@include file="WEB-INF/cine.jsp" %>
+                        <%@include file="WEB-INF/cineArreglo.jsp" %>
                 <% } %>
 			</div>
 		</div>

@@ -32,9 +32,14 @@ public class svlCine extends HttpServlet {
             session.setAttribute("id", data==null ? null : "cines");
             session.setAttribute("data", data);
             
-        }
+        }else {
+        	data = daoCine.getVerCine(id,false);
+            session.setAttribute("id", data==null ? null : "cine");
+            session.setAttribute("data", data);
+            session.setAttribute("mTarifas", daoCine.getCineTarifas(id,false));
+            session.setAttribute("mPeliculas", daoCine.getCinePeliculas(id,false));
+    }
         response.sendRedirect("index.jsp");
-        
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

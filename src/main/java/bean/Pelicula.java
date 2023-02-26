@@ -95,7 +95,7 @@ public class Pelicula {
 		Duracion=aRegistro[7];
 		Link =aRegistro[8];
 		Reparto =aRegistro[9];
-		 Sinopsis=aRegistro[10];
+		Sinopsis=aRegistro[10];
 	}
 	
 	

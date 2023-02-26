@@ -7,12 +7,7 @@ import bean.Pelicula;
 
 public class PeliculaDAO {
 	db.dB db= new db.dB("mysql8003.site4now.net","a95010_cinesta","cinestar1234","db_a95010_cinesta");
-	/*public Object getPeliculas(int id) {
-		
-		db.Sentencia(String.format("call sp_getPeliculas(%s)",id));
-		return db.getRegistros();
-	}*/
-	/*La siguiente forma es para Lista*/
+	
 	public Object getPeliculas(int id,boolean bLista) {
 		
 		db.Sentencia(String.format("call sp_getPeliculas(%s)",id));

@@ -25,11 +25,12 @@ public class svlCine extends HttpServlet {
         HttpSession session = request.getSession();
         dao.daoCine daoCine = new dao.daoCine();
         
-        Object idCine= request.getParameter("idCine");
-        if( idCine== null ) {
-            String [][] mCines = daoCine.getVerCines();
-            session.setAttribute("id", mCines==null ? null : "cines");
-            session.setAttribute("mCines", mCines);
+        String id= request.getParameter("id");
+        Object data =null;
+        if( id== null ) {
+             data = daoCine.getVerCines(true);
+            session.setAttribute("id", data==null ? null : "cines");
+            session.setAttribute("data", data);
             
         }
         response.sendRedirect("index.jsp");
